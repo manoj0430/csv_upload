@@ -1,0 +1,71 @@
+<body class="bg-dark">
+    <div class="container d-flex flex-column justify-content-center">
+        <div id="search-box">
+            <input type="text" name="search" id="search" onkeyup='searchTable()' placeholder="Enter Text"></input>
+            <span>Search Using</span>
+            <select name="option" id="opt">
+                <% for(let i=0; i<head.length; i++){ %>
+                    <option value="<%= i %>">
+                        <%= head[i] %>
+                    </option>
+                    <% } %>
+            </select>
+        </div>
+        <br>
+        <table id="sortTable" class="table table-striped-columns ">
+            <thead>
+              <tr>
+                <%for(header of head){ %> 
+                    <th scope="col" class="headRowHeading"><%=header%> <i class="fa-solid "></i></th>
+                    <%}%>
+              </tr>
+            </thead>
+
+            <tbody>
+                <%for(fileData of data){%> 
+              <tr>
+                <%for(header of head){%>
+                    <td scope="row"><%=fileData[header]%></td>
+                <%}%>
+              </tr>
+            <%}%>
+              
+            </tbody>
+          </table>
+          <nav id="pagingNav" aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="/display/?id=<%= file._id %>&page=1">First</a></li>
+                <li class="page-item">
+                    <%if(page!=1){%>
+                        <a class="page-link" href="/display/?id=<%= file._id %>&page=<%=page-1%>">
+                            <%=page-1%>
+                        </a>
+                        <%}%>
+                </li>
+                <li class="page-item"><a class="page-link">
+                        <%=page%>
+                    </a></li>
+
+
+                <li class="page-item">
+                    <%if(page!=totalPages){%>
+                        <a class="page-link" href="/display/?id=<%= file._id %>&page=<%=++page%>">
+                            <%=page%>
+                        </a>
+                        <%}%>
+                </li>
+
+                <li class="page-item">
+
+                    <a class="page-link" href="/display/?id=<%= file._id %>&page=<%=totalPages%>">
+                        Last
+                    </a>
+
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</body>
+
+<script src="/js/display.js"></script>

@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/home.css">
+<body>
+    <div class="container-fluid" id="outer-container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8 bg-light p-5" id="fileForm">
+                <div class="card">
+                    <form action="/upload" class="bg-secondary" enctype="multipart/form-data" method="post">
+                        <div class="card-body">
+                          <h5 class="card-title text-center text-light">Upload the CSV-file</h5>
+                          <div class="my-3">
+                            <input type="file" class="btn" name="CSVFile"  accept=".csv" multiple style="text-decoration: none;">
+                          </div>
+                          <div>
+                            <input type="submit" value="Upload" class="btn btn-success">
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center my-5">
+            <div class="col-md-8">
+                <% for(file of files){%>
+                    <div class="row bg-light p-1 my-2  border ">
+                        <div class="col-md-10">
+                            <a href="display?id=<%=file.id%>&page=1" target="_blank" class="fs-4"  style="text-decoration: none;"><%=file.name%></a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="delete?id=<%=file.id%>"><button class="btn btn-outline-danger">Delete</button></a>
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+        
+    </div>
+</body>
