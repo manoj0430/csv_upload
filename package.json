@@ -2,10 +2,10 @@
   "name": "csv_upload",
   "version": "1.0.0",
   "description": "This is a project in which we need to upload a CSV file and show the data in it.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Manoj",

@@ -25,7 +25,7 @@ module.exports.upload=async(req,res)=>{
                 }
               }
             File.uploadedFile(req,res,async (err)=>{
-                if(err){ console.log('**************multer Eroor: ', err)};
+                if(err){ console.log('**************multer Error: ', err)};
                 if(req.file){
                     let file= await File.create({
                         name:req.file.originalname
