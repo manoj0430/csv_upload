@@ -4,7 +4,8 @@
   "description": "This is a project in which we need to upload a CSV file and show the data in it.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Manoj",

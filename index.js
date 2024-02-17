@@ -14,7 +14,7 @@ app.use('/',routes);
 app.set('view engine','ejs');
 // setting up the views folder as ./views
 app.set('views',path.join(__dirname,'./views'));
-// way to declare upload file path make the upload path avliable to the browser
+// way to declare upload file path make the upload path  to the browser
 app.use('/uploads',express.static(__dirname +'/uploads'));
 
 
